@@ -1,0 +1,121 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+:root {
+	--button-bg: #f4f4f4;
+	--footer-bg: #f2f2f2;
+	--singIn-bg: #4386f8;
+	--body-text-color: #222222;
+	--nav-text-color: #000000de;
+	--footer-text-color: #5f6368;
+}
+html {
+	font-size: 62.5%;
+}
+.container {
+	color: var(--body-text-color);
+	font-family: "Roboto", sans-serif;
+	font-size: 1.4rem;
+	width: 100vw;
+	height: 100vh;
+}
+button {
+	border: none;
+	background: var(--button-bg);
+	color: var(--body-text-color);
+	padding: 10px 20px;
+	margin-right: 20px;
+}
+.nav-icon button {
+	background: var(--singIn-bg);
+	color: white;
+	padding: 10px 13px;
+}
+/* ...........{ Nav }.................... */
+nav,
+footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 5vh;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 0.5rem 1rem;
+}
+nav div {
+	display: flex;
+}
+nav ul,
+footer ul {
+	list-style: none;
+	display: flex;
+	align-items: center;
+}
+nav ul li,
+footer ul li {
+	margin-left: 2rem;
+}
+.fa {
+	margin: 0 2rem;
+	font-size: 2rem;
+	align-self: center;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+a:hover {
+	text-decoration: underline;
+}
+/* ////////{ Main }//////// */
+.main-body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 90vh;
+	width: 100%;
+	padding-top: 226px;
+}
+.main-body img {
+	width: 270px;
+	height: auto;
+	padding-bottom: 2rem;
+}
+.search_input {
+	height: 4.5rem;
+	width: 583px;
+	border-radius: 30px;
+	border: 1px solid rgb(150, 150, 150);
+}
+.input_div {
+	position: relative;
+	margin-bottom: 2rem;
+}
+.left_icon,
+.right_icon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.left_icon {
+	left: 1%;
+}
+.right_icon {
+	right: 1%;
+}
+/* ////////////{ footer }/////////////// */
+footer {
+	bottom: 0;
+	left: 0;
+	background: var(--footer-bg);
+	color: var(--footer-text-color);
+	top: initial;
+}
