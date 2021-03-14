@@ -1,71 +1,120 @@
-const entry = ["rock", "paper", "scissors"],
-	times = prompt("Enter how many times to play :");
+const playerSide = document.querySelector(".player-side"),
+	playerSc = document.querySelector(".player-score"),
+	computerSc = document.querySelector(".computer-score"),
+	textarea = document.querySelector(".txt"),
+	playAgain = document.querySelector(".play-again"),
+	compWins = document.querySelector(".computerWins"),
+	plyWins = document.querySelector(".playerWins"),
+	entry = ["rock", "paper", "scissors"];
 
-let computerWins = 0,
-	playerWins = 0;
+let computerScore = 0,
+	playerScore = 0,
+	computerWins = 0,
+	playerWins = 0,
+	playerInput = "";
 
-timesToPlay(times);
-// All functions
+// player input
+playerSide.addEventListener("click", playerIn);
+
+function playerIn(e) {
+	e.preventDefault();
+	const isRock = e.target.classList.contains("rock"),
+		isPaper = e.target.classList.contains("paper"),
+		isScissors = e.target.classList.contains("scissors");
+	if (isRock) {
+		playerInput = "rock";
+	} else if (isPaper) {
+		playerInput = "paper";
+	} else if (isScissors) {
+		playerInput = "scissors";
+	} else {
+		playerInput = "";
+	}
+	determinePoint();
+}
+// update scores;
+function updateScores() {
+	playerSc.textContent = playerScore;
+	computerSc.textContent = computerScore;
+}
 // random entry
 function randomEntry() {
 	return Math.floor(Math.random() * 3);
 }
-// validate input
-function inputValidation(playerInput) {
-	if (entry.indexOf(playerInput) == -1) {
-		console.log("please input a valid choice");
-		return true;
-	} else {
-		return false;
-	}
-}
 // determine points
 function determinePoint() {
-	const computerPlay = entry[randomEntry()],
-		playerInput = prompt("Enter your choice").toLocaleLowerCase(),
-		// const playerInput = 'rock',
-		// computerPlay = 'rock',
-		playerValidInput = inputValidation(playerInput);
+	if (playerInput == "") return;
+	const computerInput = entry[randomEntry()];
+	computerClicked(computerInput);
 
-	if (playerValidInput) {
-		determinePoint();
-		return;
-	}
-
-	if (playerInput == computerPlay) {
-		playerWins += 1;
-		computerWins += 1;
-	} else if (playerInput == "rock" && computerPlay == "scissors") {
-		playerWins += 1;
-	} else if (playerInput == "paper" && computerPlay == "rock") {
-		playerWins += 1;
-	} else if (playerInput == "scissors" && computerPlay == "paper") {
-		playerWins += 1;
+	if (playerInput == computerInput) {
+		// its a tie msg
+		showMsg("tie");
+	} else if (playerInput == "rock" && computerInput == "scissors") {
+		playerScore += 1;
+	} else if (playerInput == "paper" && computerInput == "rock") {
+		playerScore += 1;
+	} else if (playerInput == "scissors" && computerInput == "paper") {
+		playerScore += 1;
 	} else {
-		computerWins += 1;
+		computerScore += 1;
 	}
+	updateScores();
+	winner();
 }
 //determine winner
 function winner() {
-	if (computerWins > playerWins) {
-		console.log("You lose, Computer wins");
-	} else if (computerWins == playerWins) {
-		console.log("It's a tie");
+	if (computerScore == 5 && playerScore < 5) {
+		// computer wins msg
+		showMsg("com");
+		playerSide.classList.add("none");
+		playAgain.style.display = "block";
+		computerWins++;
+	} else if (playerScore == 5 && computerScore < 5) {
+		// palyer wins msg
+		showMsg("ply");
+		playerSide.classList.add("none");
+		playAgain.style.display = "block";
+		playerWins++;
+	}
+	plyWins.textContent = playerWins;
+	compWins.textContent = computerWins;
+}
+//computer clicked
+const crock = document.querySelector(".Crock"),
+	cpaper = document.querySelector(".Cpaper"),
+	cscissors = document.querySelector(".Cscissors");
+function computerClicked(input) {
+	if (input == "rock") {
+		crock.classList.add("cmps");
+		setTimeout(() => crock.classList.remove("cmps"), 200);
+	} else if (input == "paper") {
+		cpaper.classList.add("cmps");
+		setTimeout(() => cpaper.classList.remove("cmps"), 200);
 	} else {
-		console.log("Congrats, you win");
+		cscissors.classList.add("cmps");
+		setTimeout(() => cscissors.classList.remove("cmps"), 200);
 	}
 }
-// times to play
-function timesToPlay(times) {
-	if (isNaN(times)) {
-		const times = prompt("Enter how many times to play :");
-		timesToPlay(times);
+
+// show message
+function showMsg(who) {
+	if (who == "com") {
+		textarea.textContent = "Computer Wins";
+	} else if (who == "ply") {
+		textarea.textContent = "You Win";
 	} else {
-		times = parseInt(times);
-		while (times > 0) {
-			determinePoint();
-			times--;
-		}
-		winner();
+		textarea.textContent = "It's a tie";
+		setTimeout(() => (textarea.textContent = ""), 1000);
 	}
+}
+//play again
+playAgain.addEventListener("click", again);
+function again() {
+	playerScore = 0;
+	computerScore = 0;
+	updateScores();
+	playAgain.style.display = "none";
+	playerSide.classList.remove("none");
+	textarea.textContent = "";
 }

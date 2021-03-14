@@ -4,8 +4,87 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+			integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+			integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="style.css" />
 		<script src="app.js" defer></script>
 		<title>Rock Paper Scissors</title>
 	</head>
-	<body></body>
+	<body>
+		<div class="container">
+			<div class="info">
+				<h4>Frist to reach 5 wins</h4>
+			</div>
+			<div class="play-area row">
+				<!-- player side  -->
+				<div class="six columns player-side">
+					<div class="row identi">
+						<i class="fa fa-user-o six columns" aria-hidden="true"></i>
+						<p class="six columns p">
+							Score: <span class="player-score">0</span>
+						</p>
+					</div>
+					<div class="row button-container">
+						<div class="four columns rock">
+							<i class="fa fa-hand-rock-o"></i
+							><span class="icon-text">Rock</span>
+						</div>
+						<div class="four columns paper">
+							<i class="fa fa-hand-paper-o"></i
+							><span class="icon-text">Paper</span>
+						</div>
+						<div class="four columns scissors">
+							<i class="fa fa-hand-scissors-o"></i
+							><span class="icon-text">Scissors</span>
+						</div>
+					</div>
+				</div>
+				<!-- computer side  -->
+				<div class="six columns computer-side">
+					<div class="row identi">
+						<i class="fa fa-television six columns" aria-hidden="true"></i>
+						<p class="six columns p">
+							Score: <span class="computer-score">0</span>
+						</p>
+					</div>
+					<div class="row button-container computer-side-button">
+						<div class="four columns Crock">
+							<i class="fa fa-hand-rock-o"></i
+							><span class="icon-text">Rock</span>
+						</div>
+						<div class="four columns Cpaper">
+							<i class="fa fa-hand-paper-o"></i
+							><span class="icon-text">Paper</span>
+						</div>
+						<div class="four columns Cscissors">
+							<i class="fa fa-hand-scissors-o"></i
+							><span class="icon-text">Scissors</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="wins row">
+				<div class="six columns">
+					<h4>Wins : <span class="playerWins">0</span></h4>
+				</div>
+				<div class="six columns">
+					<h4>Wins : <span class="computerWins">0</span></h4>
+				</div>
+			</div>
+			<div class="result-area row">
+				<textarea class="twelve columns txt" disabled></textarea>
+			</div>
+			<button class="play-again u-full-width">Play Again</button>
+		</div>
+	</body>
 </html>

@@ -1,0 +1,75 @@
+html {
+	font-size: 62.5%;
+}
+.play-area,
+.wins,
+textarea,
+.info {
+	margin-bottom: 3rem;
+	text-align: center;
+}
+h4 {
+	margin: 0;
+}
+.six {
+	border: 1px solid black;
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+/* identi area  */
+.identi {
+	margin-bottom: 2rem;
+}
+.identi .fa {
+	font-size: 3rem;
+}
+.p {
+	border: none;
+	font-size: 2rem;
+}
+/* select area  */
+.four {
+	border: 1px solid black;
+	border-radius: 0.5rem;
+	font-size: 6rem;
+	position: relative;
+	padding: 1rem;
+	cursor: pointer;
+}
+.four:hover {
+	background-color: burlywood;
+}
+.four:active {
+	background-color: teal;
+}
+.fa {
+	pointer-events: none;
+}
+.computer-side .four {
+	pointer-events: none;
+}
+.icon-text {
+	font-size: 1.8rem;
+	position: absolute;
+	bottom: 0%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+/* result area  */
+textarea {
+	height: 6rem;
+	resize: none;
+	text-align: center;
+	font-size: 3rem;
+}
+/* compter select  */
+.cmps {
+	background-color: teal;
+}
+/* event none */
+.none {
+	pointer-events: none;
+}
+.play-again {
+	display: none;
+}
