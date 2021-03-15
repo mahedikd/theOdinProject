@@ -20,7 +20,6 @@ function gridFill(fill) {
 		const elem = document.createElement("div");
 		elem.className = "grid-element";
 		elem.addEventListener("mouseover", changeColor);
-		elem.addEventListener("mouseout", StopSound);
 		gridContainer.appendChild(elem);
 	}
 }
@@ -28,8 +27,11 @@ function changeColor(e) {
 	const r = Math.floor(Math.random() * 256),
 		g = Math.floor(Math.random() * 256),
 		b = Math.floor(Math.random() * 256);
-	e.target.style.background = `rgb(${r}, ${g}, ${b})`;
-	PlaySound();
+	if (e.target) {
+		e.target.style.background = `rgb(${r}, ${g}, ${b})`;
+	} else {
+		e.style.background = `rgb(${r}, ${g}, ${b})`;
+	}
 }
 function changeHeight() {
 	const width = gridContainer.offsetWidth;
@@ -53,10 +55,14 @@ function changePixelAmount() {
 		}
 	}
 }
-function PlaySound() {
-	audio.play();
-}
-function StopSound() {
-	audio.pause();
-	audio.currentTime = 0;
-}
+
+gridContainer.addEventListener("touchmove", (e) => {
+	let touch = e.touches[0],
+		checkbox = document.elementFromPoint(touch.clientX, touch.clientY);
+	if (checkbox) {
+		if (checkbox.classList.contains("grid-element")) {
+			changeColor(checkbox);
+		}
+		checkbox.checked = !checkbox.checked;
+	}
+});
