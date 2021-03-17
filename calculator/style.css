@@ -1,0 +1,110 @@
+body {
+	background-position: 0px 5px, 10px 0px, 0px 10px, 10px 5px, 0% 0%, 0% 0%;
+	background-repeat: repeat, repeat, repeat, repeat, repeat, repeat;
+	background-attachment: scroll, scroll, scroll, scroll, scroll, scroll;
+	background-image: linear-gradient(27deg, rgb(21, 21, 21) 5px, transparent 5px),
+		linear-gradient(207deg, rgb(21, 21, 21) 5px, transparent 5px),
+		linear-gradient(27deg, rgb(34, 34, 34) 5px, transparent 5px),
+		linear-gradient(207deg, rgb(34, 34, 34) 5px, transparent 5px),
+		linear-gradient(90deg, rgb(27, 27, 27) 10px, transparent 10px),
+		linear-gradient(
+			rgb(29, 29, 29) 25%,
+			rgb(26, 26, 26) 25%,
+			rgb(26, 26, 26) 50%,
+			transparent 50%,
+			transparent 75%,
+			rgb(36, 36, 36) 75%,
+			rgb(36, 36, 36)
+		);
+	background-origin: padding-box, padding-box, padding-box, padding-box, padding-box,
+		padding-box;
+	background-clip: border-box, border-box, border-box, border-box, border-box,
+		border-box;
+	background-color: rgb(19, 19, 19);
+	background-size: 20px 20px;
+	--darkreader-inline-bgimage: linear-gradient(27deg, #101112 5px, rgba(0, 0, 0, 0) 5px),
+		linear-gradient(207deg, #101112 5px, rgba(0, 0, 0, 0) 5px),
+		linear-gradient(27deg, #1a1c1d 5px, rgba(0, 0, 0, 0) 5px),
+		linear-gradient(207deg, #1a1c1d 5px, rgba(0, 0, 0, 0) 5px),
+		linear-gradient(90deg, #141617 10px, rgba(0, 0, 0, 0) 10px),
+		linear-gradient(
+			#161819 25%,
+			#141516 25%,
+			#141516 50%,
+			rgba(0, 0, 0, 0) 50%,
+			rgba(0, 0, 0, 0) 75%,
+			#1b1d1e 75%,
+			#1b1d1e
+		);
+	--darkreader-inline-bgcolor: #0e0f10;
+}
+.container {
+	padding: 0;
+}
+.cal-grid {
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	max-width: 410px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: minmax(150px, auto) repeat(5, 60px);
+	gap: 0.2rem;
+	margin: 15% auto;
+	border: 3px solid black;
+	padding: 1rem;
+	border-radius: 5px;
+	box-shadow: inset 0 0 3px black;
+	background: #d0d0d0;
+}
+.cal-grid button {
+	font-size: 2rem;
+	margin: 0;
+	height: initial;
+	border: 1px solid black;
+}
+.cal-grid button:hover {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.cal-grid button:active {
+	box-shadow: inset 0 0 3px black;
+}
+.spn {
+	grid-column: span 2;
+}
+.output {
+	grid-column: 1/-1;
+	background: linear-gradient(45deg, rgba(0, 0, 0, 0.281), rgba(0, 0, 0, 0.466));
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-around;
+	flex-direction: column;
+	word-wrap: break-word;
+	word-break: break-all;
+	border-radius: 4px;
+	box-shadow: inset 0 0 5px black;
+	padding: 0.8rem;
+}
+.upper-display {
+	color: rgba(0, 0, 0, 0.74);
+	font-size: 1.8rem;
+	font-weight: 500;
+}
+.lower-display {
+	color: rgb(0, 0, 0);
+	font-size: 2.5rem;
+}
+.oparator:hover,
+.oparator {
+	background-color: rgba(0, 128, 128, 0.74) !important;
+}
+.ac:hover,
+.ac {
+	background-color: rgba(255, 0, 0, 0.726) !important;
+}
+.eq:hover,
+.eq {
+	background-color: rgba(118, 250, 114, 0.815) !important;
+}
+.prs {
+	box-shadow: inset 0 0 3px black;
+}

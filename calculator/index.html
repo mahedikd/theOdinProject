@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+			integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+			integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+			crossorigin="anonymous"
+		/>
+		<script src="app.js" defer></script>
+		<link rel="stylesheet" href="style.css" />
+		<title>Calculator</title>
+	</head>
+	<body>
+		<main class="container">
+			<div class="cal-grid">
+				<div class="output">
+					<div data-previous class="upper-display"></div>
+					<div data-current class="lower-display"></div>
+				</div>
+				<button data-clearall class="oparator spn ac">AC</button
+				><button data-del class="oparator">
+					<i class="fa fa-arrow-left" aria-hidden="true"></i>
+				</button>
+				<button data-oparator class="oparator">/</button>
+				<button data-number>7</button>
+				<button data-number>8</button>
+				<button data-number>9</button>
+				<button data-oparator class="oparator">X</button>
+				<button data-number>4</button>
+				<button data-number>5</button>
+				<button data-number>6</button>
+				<button data-oparator class="oparator">+</button>
+				<button data-number>1</button>
+				<button data-number>2</button>
+				<button data-number>3</button>
+				<button data-oparator class="oparator">-</button>
+				<button data-number>0</button>
+				<button data-number class="oparator">.</button>
+
+				<button data-equal class="oparator spn eq">=</button>
+			</div>
+		</main>
+	</body>
+</html>
