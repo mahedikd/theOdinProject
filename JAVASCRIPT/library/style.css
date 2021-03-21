@@ -187,6 +187,17 @@ input[type='date']{
     height: 70%;
     width: 80%;
   }
+  .library-grid{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 10px;
+  }
+  #add-book,#clear-book{
+    bottom: 60%;
+  }
+  #clear-book{
+    left: 50%;
+  }
 }
 
 #fin{
