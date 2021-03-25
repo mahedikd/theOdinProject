@@ -71,7 +71,7 @@ interBooksIn.addEventListener("click", updateReadState);
 //listen for form submit
 document.querySelector("#bookForm").addEventListener("submit", takeInfoAndMakeObj);
 //book constractor
-function MakeBook(
+function makeBook(
 	id,
 	bookTitle,
 	author,
@@ -81,14 +81,16 @@ function MakeBook(
 	addedHere,
 	checked,
 ) {
-	this.id = id;
-	this.bookTitle = bookTitle;
-	this.author = author;
-	this.lang = lang;
-	this.totalPage = totalPage;
-	this.publishedDate = publishedDate;
-	this.addedHere = addedHere;
-	this.checked = checked;
+	return {
+		id,
+		bookTitle,
+		author,
+		lang,
+		totalPage,
+		publishedDate,
+		addedHere,
+		checked,
+	};
 }
 // add book object in an array
 function takeInfoAndMakeObj(e) {
@@ -116,7 +118,7 @@ function takeInfoAndMakeObj(e) {
 		[addMonth, addDay, addYear] = addDate.toDateString().substr(4).split(" "),
 		newAddDate = `${addDay} ${addMonth} ${addYear}`;
 
-	const newBook = new MakeBook(
+	const newBook = makeBook(
 		id,
 		bookName,
 		authorName,
