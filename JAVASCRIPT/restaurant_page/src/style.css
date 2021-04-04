@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Keania+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Romanesco&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Romanesco&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mr+Bedfort&display=swap");
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: "Courier New", Courier, monospace;
+	color: rgb(255, 255, 255);
+}
+.background-img-section {
+	position: fixed;
+	left: -5px;
+	top: -5px;
+	bottom: -5px;
+	right: -5px;
+	z-index: -2;
+	filter: blur(5px);
+	margin: -5px;
+}
+.background-img-section::after {
+	content: "";
+	background: rgba(0, 0, 0, 0.726);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.background-img {
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+}
+.background-img.home {
+	background-image: url("https://ontestic.sirv.com/background/main-background.jpg");
+}
+.background-img.menu {
+	background-image: url("https://ontestic.sirv.com/background/menu-bacground.jpg");
+}
+.background-img.contact {
+	background-image: url("https://ontestic.sirv.com/background/contact-bacgound.jpg");
+}
+
+header {
+	position: relative;
+	top: 0;
+	left: 0;
+	height: 20vh;
+	width: 100%;
+	background: rgba(242, 180, 141, 0.63);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 0 20px 0;
+}
+h3 {
+	font-size: 6rem;
+	margin-bottom: 3rem;
+	font-family: "Mr Bedfort", cursive;
+}
+nav ul {
+	list-style: none;
+	display: flex;
+}
+a {
+	text-decoration: none;
+}
+nav ul li a {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 2.6rem;
+	color: rgb(255, 255, 255);
+	transition: all 0.3s ease;
+	font-family: "Keania One", cursive;
+}
+nav ul li a:hover {
+	transform: translateY(-15%);
+}
+.active {
+	border-bottom: 2px solid white;
+}
+/* home  */
+.home-content {
+	display: flex;
+	padding: 2rem;
+	margin-top: 6rem;
+	align-items: center;
+	justify-content: center;
+	animation: fadeIn 1s;
+}
+.textsec {
+	width: 500px;
+}
+
+.slo {
+	font-size: 11rem;
+	text-shadow: 3px 3px 5px black;
+	font-family: "Romanesco", cursive;
+}
+.textsec p {
+	font-size: 4rem;
+	font-family: "Romanesco", cursive;
+}
+.imgsc {
+	position: relative;
+	margin-left: -2%;
+	z-index: -1;
+}
+.img {
+	border: 5px solid black;
+	border-radius: 10px;
+}
+.home-img-1 {
+	width: 400px;
+	height: auto;
+}
+.home-img-2 {
+	width: 170px;
+	height: auto;
+	position: absolute;
+	bottom: -5%;
+	right: -5%;
+}
+/* /////menu  */
+.menu-content {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	width: 900px;
+	margin: 0 auto;
+	animation: fadeIn 1s;
+}
+h4 {
+	font-size: 3rem;
+	font-family: "Mr Bedfort", cursive;
+}
+.price {
+	font-size: 2rem;
+	font-family: "Keania One", cursive;
+}
+.card {
+	background: rgba(0, 0, 0, 0.644);
+	width: 300px;
+	height: 400px;
+	border-radius: 5px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: column;
+	transition: all 0.3s ease-in-out;
+}
+.cardimg {
+	width: 250px;
+	height: 250px;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+.card:hover {
+	transform: translateY(-2%);
+	background: rgba(128, 128, 128, 0.644);
+}
+/* contact page  */
+.contact-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 700px;
+	margin: 0 auto;
+	border-radius: 5px;
+	background: rgba(0, 0, 0, 0.685);
+	animation: fadeIn 1s;
+}
+.address p {
+	font-size: 2rem;
+	margin: 2rem 0;
+}
+.map {
+	width: 650px;
+	margin: 0 0 2rem 0;
+}
+.map img {
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	border: 1px solid black;
+}
+/* footer  */
+
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding: 1rem;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.747);
+	border-top: 1px solid grey;
+	font-size: 1.8rem;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+
+.wrapper {
+	margin: 5rem 0;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
