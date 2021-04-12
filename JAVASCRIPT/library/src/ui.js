@@ -1,26 +1,29 @@
+/* eslint-disable class-methods-use-this */
 class UI {
-	// this will render data as a card [add element]
-	addElementToUi(data, placeToInterElement) {
-		const id = data.id,
-			bookTitle = data.bookTitle,
-			author = data.author,
-			lang = data.lang,
-			totalPage = data.totalPage,
-			publishedDate = data.publishedDate,
-			addedHere = data.addedHere,
-			ischecked = data.checked;
+  // this will render data as a card [add element]
+  addElementToUi(data, placeToInterElement) {
+    const {
+      id,
+      bookTitle,
+      author,
+      lang,
+      totalPage,
+      publishedDate,
+      addedHere,
+      checked: ischecked,
+    } = data;
 
-		let checked = "",
-			fin = "";
-		if (ischecked) {
-			checked = "checked";
-			fin = "id='fin'";
-		} else {
-			checked = "";
-			fin = "";
-		}
+    let checked = '';
+    let fin = '';
+    if (ischecked) {
+      checked = 'checked';
+      fin = "id='fin'";
+    } else {
+      checked = '';
+      fin = '';
+    }
 
-		const element = `
+    const element = `
       <div data-id="${id}" class="book" ${fin}>
         <table class="u-full-width">
           <fieldset>
@@ -57,25 +60,28 @@ class UI {
         </label>
       </div>
     `;
-		placeToInterElement.innerHTML += element;
-		// document.querySelector(".library-grid").appendChild(element);
-	}
-	showAlert(body, insertbefore, msg) {
-		const p = document.createElement("p");
-		p.className = "alert";
-		p.innerText = msg;
-		p.style.cssText =
-			"background: red; color: white; padding: 1rem; border-radius: 4px;text-align: center; font-weight: 600";
-		body.insertBefore(p, insertbefore);
-		// card.insertBefore(errorDiv, heading);
-		setTimeout(() => {
-			document.querySelector(".alert").remove();
-		}, 3000);
-	}
-	clearElem(container) {
-		while (container.firstChild) {
-			container.removeChild(container.firstChild);
-		}
-	}
+    placeToInterElement.innerHTML += element;
+    // document.querySelector(".library-grid").appendChild(element);
+  }
+
+  showAlert(body, insertbefore, msg) {
+    const p = document.createElement('p');
+    p.className = 'alert';
+    p.innerText = msg;
+    p.style.cssText =
+      'background: red; color: white; padding: 1rem; border-radius: 4px;text-align: center; font-weight: 600';
+    body.insertBefore(p, insertbefore);
+    // card.insertBefore(errorDiv, heading);
+    setTimeout(() => {
+      document.querySelector('.alert').remove();
+    }, 3000);
+  }
+
+  clearElem(container) {
+    while (container.firstChild) {
+      container.removeChild(container.firstChild);
+    }
+  }
 }
-// export const ui = new UI();
+const ui = new UI();
+export default ui;
