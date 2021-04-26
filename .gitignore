@@ -1,3 +1,4 @@
 FOUNDATIONS/javascript-exercises
 FOUNDATIONS/javascript-exercises-solutions
-
+node_modules
+.env
