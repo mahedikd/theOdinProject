@@ -1,0 +1,11 @@
+#taskInput {
+  margin-left: 2rem;
+}
+ul {
+  list-style: circle;
+}
+#lis {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
